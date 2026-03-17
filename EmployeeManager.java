@@ -105,6 +105,13 @@ public class EmployeeManager {
         // TODO: If not found, throw IllegalArgumentException with message:
         //       "Employee with ID <id> not found"
         // TODO: Remove from both the list and the map
+
+        if (!employeeMap.containsKey(id)) {
+            throw new IllegalArgumentException("Employee with ID " + id + " not found");
+        }
+        Employee employee = employeeMap.get(id);
+        employees.remove(employee);
+        employeeMap.remove(id);
     }
 
     /**
@@ -125,6 +132,17 @@ public class EmployeeManager {
         // TODO: Create a new Manager with the same details + teamSize
         // TODO: Remove the old employee, add the new Manager
         // TODO: Return the new Manager
-        return null;
+
+        if (!employeeMap.containsKey(id)) {
+            throw new IllegalArgumentException("Employee with ID " + id + " not found");
+        }
+        Employee employee = employeeMap.get(id);
+        if (employee instanceof Manager) {
+            throw new IllegalArgumentException("Employee " + id + " is already a Manager");
+        }
+        Manager newManager = new Manager(employee.getId(), employee.getName(), employee.getDepartment(), employee.getSalary(), teamSize);
+        removeEmployee(id);
+        addEmployee(newManager);
+        return newManager;
     }
 }

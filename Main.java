@@ -71,6 +71,22 @@ public class Main {
         //   2. Trying to promote an employee that's already a Manager
         //   3. Trying to create an Employee with invalid data (negative salary)
         // Each try/catch should print the error message gracefully
+        try {
+            manager.removeEmployee(25); // ID that doesn't exist
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        try {
+            manager.promoteToManager(4, 10); // ID that is already a Manager
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        try {
+            Employee invalidEmployee = new Employee(6, "Invalid", "finance", -5000);
+            manager.addEmployee(invalidEmployee);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
 
     }
 }
