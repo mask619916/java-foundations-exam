@@ -89,6 +89,19 @@ public class EmployeeManager {
         return employees.size();
     }
 
+    public String exportAllToCSV() {
+        StringBuilder csv = new StringBuilder();
+
+        for (int index = 0; index < employees.size(); index++) {
+            csv.append(employees.get(index).toCSV());
+            if (index < employees.size() - 1) {
+                csv.append("\n");
+            }
+        }
+
+        return csv.toString();
+    }
+
     // ================================================================
     // PART D — Exception Handling (complete these 2 methods)
     // ================================================================

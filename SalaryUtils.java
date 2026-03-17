@@ -45,9 +45,9 @@ public class SalaryUtils {
         if (annualSalary < 10000) {
             return 0;
         } else if (annualSalary <= 30000) {
-            return annualSalary * (10/100);
+            return annualSalary * 0.10;
         } else {
-            return annualSalary * (20/100);
+            return annualSalary * 0.20;
         }
     }
 
@@ -88,6 +88,6 @@ public class SalaryUtils {
             throw new IllegalArgumentException("percentRaise must be between 0 and 100");
         }
         return currentSalary * (1 + percentRaise / 100);
-        
+
     }
 }

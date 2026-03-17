@@ -40,4 +40,9 @@ public class Manager extends Employee {
 	public double getBonus() {
 		return getSalary() * 0.15;
 	}
+
+	@Override
+	public String toCSV() {
+		return getId() + "," + getName() + "," + getDepartment() + "," + getSalary() + "," + teamSize;
+	}
 }

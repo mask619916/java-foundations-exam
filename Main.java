@@ -88,5 +88,8 @@ public class Main {
             System.out.println("Error: " + e.getMessage());
         }
 
+        System.out.println("\n=== PART E: CSV Export ===");
+        System.out.println(manager.exportAllToCSV());
+
     }
 }
