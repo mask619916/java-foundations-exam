@@ -14,3 +14,31 @@
  */
 
 // TODO: Create the Intern class here
+public class Intern extends Employee {
+
+    private String university;
+
+    public Intern(int id, String name, String department, double salary, String university) {
+        super(id, name, department, salary);
+        this.university = university;
+    }
+
+    public String getUniversity() {
+        return university;
+    }
+
+    public void setUniversity(String university) {
+        this.university = university;
+    }
+
+    @Override
+    public String toString() {
+        return "Intern{id=" + getId() + ", name='" + getName() + "', department='" + getDepartment()
+                + "', salary=" + getSalary() + ", university='" + university + "'}";
+    }
+
+    @Override
+    public double getBonus() {
+        return 0;
+    }
+}

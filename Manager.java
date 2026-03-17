@@ -13,4 +13,31 @@
  *   6. Override getBonus() to return 15% of salary (salary * 0.15)
  */
 
-// TODO: Create the Manager class here
+public class Manager extends Employee {
+
+	private int teamSize;
+
+	public Manager(int id, String name, String department, double salary, int teamSize) {
+		super(id, name, department, salary);
+		this.teamSize = teamSize;
+	}
+
+	public int getTeamSize() {
+		return teamSize;
+	}
+
+	public void setTeamSize(int teamSize) {
+		this.teamSize = teamSize;
+	}
+
+	@Override
+	public String toString() {
+		return "Manager{id=" + getId() + ", name='" + getName() + "', department='" + getDepartment()
+				+ "', salary=" + getSalary() + ", teamSize=" + teamSize + "}";
+	}
+
+	@Override
+	public double getBonus() {
+		return getSalary() * 0.15;
+	}
+}

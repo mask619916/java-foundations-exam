@@ -19,6 +19,7 @@ public class Main {
         //   System.out.println("Tax on 25000: " + SalaryUtils.calculateTax(25000));
         //   System.out.println("Net salary: " + SalaryUtils.calculateNetSalary(25000));
         //   System.out.println("After 10% raise: " + SalaryUtils.applyRaise(3000, 10));
+        
         System.out.println("Annual salary: " + SalaryUtils.calculateAnnualSalary(3000));
         System.out.println("Tax on 25000: " + SalaryUtils.calculateTax(25000));
         System.out.println("Net salary: " + SalaryUtils.calculateNetSalary(25000));
@@ -26,6 +27,11 @@ public class Main {
 
 
         System.out.println("\n=== PART B: Employee Manager ===");
+        // TODO: Create an EmployeeManager
+        // TODO: Create and add at least 3 employees to it
+        // TODO: Demonstrate findById (found + not found)
+        // TODO: Demonstrate getEmployeesByDepartment
+
         EmployeeManager manager = new EmployeeManager();
 
         Employee emp1 = new Employee(1, "Mohamed", "Engineering", 3500);
@@ -43,11 +49,20 @@ public class Main {
 
 
         System.out.println("\n=== PART C: Inheritance & Polymorphism ===");
-        // TODO: Create at least 1 Manager and 1 Intern
+                // TODO: Create at least 1 Manager and 1 Intern
         // TODO: Add all employees (Employee, Manager, Intern) to the manager
         // TODO: Loop through getAllEmployees() and call getBonus() on each
         //       Print: "<name> bonus: <amount>" for each one
         //       This demonstrates polymorphism — same method call, different behavior
+
+        Manager mgr = new Manager(4, "Mohamed", "Engineering", 5000, 8);
+        Intern intern = new Intern(5, "Ahmed", "Marketing", 1200, "UOB");
+        manager.addEmployee(mgr);
+        manager.addEmployee(intern);
+
+        for (Employee employee : manager.getAllEmployees()) {
+          System.out.println(employee.getName() + " bonus: " + employee.getBonus());
+        }
 
 
         System.out.println("\n=== PART D: Exception Handling ===");
